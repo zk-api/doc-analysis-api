@@ -1,5 +1,12 @@
 # doc-analysis-api
 文档解析API
+# 适用格式
+以空格分隔的文档数据，如
+```
+1 zk 30
+2 zx 35
+3 wmh 30
+```
 ## 使用方式
 ### 1.实例化处理类
 IDeal deal = new DealTXT();
