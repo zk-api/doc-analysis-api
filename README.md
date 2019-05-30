@@ -16,7 +16,9 @@ IDeal deal = new DealTXT();
  * titleNames 要解析的列索引和列名称，例：new String[][]{{"0":"id"},{"1","name"}}
  * clazz 过滤行条件类
  */
-createEntity(Path path , String[][] titleNames , Class<? extends FilterRule> clazz);
+``` 
+deal.createEntity(Path path , String[][] titleNames , Class<? extends FilterRule> clazz);
+```
 ### 3.过滤行条件类实现FilterRule接口
 ## 代码示例
 ```
