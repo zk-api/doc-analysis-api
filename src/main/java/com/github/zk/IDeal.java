@@ -11,9 +11,28 @@ import java.util.function.Predicate;
  * @date 2019/5/24 15:29
  */
 public interface IDeal {
+
+    /**
+     * 将文档组织成List<Map>
+     *
+     * @param path       文件路径
+     * @param titleNames 列索引和列名称
+     *                   new String[][]{{"列1索引","列1名称"},{"列2索引","列2名称"}}
+     * @return
+     * @throws IOException
+     */
+    List<Map> createEntity(Path path, String[][] titleNames) throws IOException;
+
+    List<Map> createEntity(Path[] paths, String[][] titleNames) throws IOException;
+
+    List<Map> createEntity(Path path, String[][] titleNames, IDealHandler handler) throws IOException;
+
+    List<Map> createEntity(Path[] paths, String[][] titleNames, IDealHandler handler) throws IOException;
+
     /**
      * 按照过滤条件将文档组织成List<Map>
-     * @param path 文件路径
+     *
+     * @param path       文件路径
      * @param titleNames 列索引和列名称
      *                   new String[][]{{"列1索引","列1名称"},{"列2索引","列2名称"}}
      * @param filterRule 行过滤条件
@@ -24,15 +43,9 @@ public interface IDeal {
 
     List<Map> createEntity(Path[] paths, String[][] titleNames, Class<? extends Predicate> filterRule) throws IOException;
 
-    /**
-     * 将文档组织成List<Map>
-     * @param path 文件路径
-     * @param titleNames 列索引和列名称
-     *                   new String[][]{{"列1索引","列1名称"},{"列2索引","列2名称"}}
-     * @return
-     * @throws IOException
-     */
-    List<Map> createEntity(Path path, String[][] titleNames) throws IOException;
+    List<Map> createEntity(Path path, String[][] titleNames, Class<? extends Predicate> filterRule, IDealHandler handler) throws IOException;
 
-    List<Map> createEntity(Path[] paths, String[][] titleNames) throws IOException;
+
+    List<Map> createEntity(Path[] paths, String[][] titleNames, Class<? extends Predicate> filterRule, IDealHandler handler) throws IOException;
+
 }
