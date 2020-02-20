@@ -1,4 +1,4 @@
-package com.github.zk;
+package com.github.zk.filter;
 
 import java.util.function.Predicate;
 
