@@ -17,7 +17,7 @@ import java.util.function.Predicate;
  * @author zk
  * @date 2020/2/20 22:50
  */
-public class DefaultHandler implements IDealHandler {
+public class DefaultCSVHandler implements IDealHandler {
     @Override
     public List<Map> dealFile(String[][] titleNames, Path path, String pattern) throws IOException {
         List<Map> list = new LinkedList<>();
@@ -32,6 +32,7 @@ public class DefaultHandler implements IDealHandler {
                 indexs[i] = Integer.valueOf(titleNames[i][0]);
             }
 
+            //只分隔“，”存在问题，如果数据中存在“，”,解析会出错，还要考虑双引号问题
             String[] split = line.split(pattern);
             /**
              * 将要解析的列存入map
