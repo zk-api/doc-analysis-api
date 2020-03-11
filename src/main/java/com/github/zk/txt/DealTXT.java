@@ -2,7 +2,7 @@ package com.github.zk.txt;
 
 import com.github.zk.IDeal;
 import com.github.zk.IDealHandler;
-import com.github.zk.handler.DefaultHandler;
+import com.github.zk.handler.DefaultTXTHandler;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -19,12 +19,12 @@ public class DealTXT implements IDeal {
 
     @Override
     public List<Map> createEntity(Path path, String[][] titleNames) throws IOException {
-        return createEntity(path, titleNames, new DefaultHandler());
+        return createEntity(path, titleNames, new DefaultTXTHandler());
     }
 
     @Override
     public List<Map> createEntity(Path[] paths, String[][] titleNames) throws IOException {
-        return createEntity(paths, titleNames, new DefaultHandler());
+        return createEntity(paths, titleNames, new DefaultTXTHandler());
     }
 
     @Override
@@ -44,12 +44,12 @@ public class DealTXT implements IDeal {
 
     @Override
     public List<Map> createEntity(Path path, String[][] titleNames, Class<? extends Predicate> filterRule) throws IOException {
-        return createEntity(path, titleNames, filterRule, new DefaultHandler());
+        return createEntity(path, titleNames, filterRule, new DefaultTXTHandler());
     }
 
     @Override
     public List<Map> createEntity(Path[] paths, String[][] titleNames, Class<? extends Predicate> filterRule) throws IOException {
-        return createEntity(paths, titleNames, filterRule, new DefaultHandler());
+        return createEntity(paths, titleNames, filterRule, new DefaultTXTHandler());
     }
 
     @Override

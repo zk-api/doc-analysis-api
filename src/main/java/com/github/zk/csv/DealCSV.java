@@ -2,7 +2,7 @@ package com.github.zk.csv;
 
 import com.github.zk.IDeal;
 import com.github.zk.IDealHandler;
-import com.github.zk.handler.DefaultHandler;
+import com.github.zk.handler.DefaultCSVHandler;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -18,12 +18,12 @@ import java.util.function.Predicate;
 public class DealCSV implements IDeal {
     @Override
     public List<Map> createEntity(Path path, String[][] titleNames) throws IOException {
-        return createEntity(path, titleNames, new DefaultHandler());
+        return createEntity(path, titleNames, new DefaultCSVHandler());
     }
 
     @Override
     public List<Map> createEntity(Path[] paths, String[][] titleNames) throws IOException {
-        return createEntity(paths, titleNames, new DefaultHandler());
+        return createEntity(paths, titleNames, new DefaultCSVHandler());
     }
 
     @Override
@@ -43,12 +43,12 @@ public class DealCSV implements IDeal {
 
     @Override
     public List<Map> createEntity(Path path, String[][] titleNames, Class<? extends Predicate> filterRule) throws IOException {
-        return createEntity(path, titleNames, filterRule, new DefaultHandler());
+        return createEntity(path, titleNames, filterRule, new DefaultCSVHandler());
     }
 
     @Override
     public List<Map> createEntity(Path[] paths, String[][] titleNames, Class<? extends Predicate> filterRule) throws IOException {
-        return createEntity(paths, titleNames, filterRule, new DefaultHandler());
+        return createEntity(paths, titleNames, filterRule, new DefaultCSVHandler());
     }
 
     @Override
